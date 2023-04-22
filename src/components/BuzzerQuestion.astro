@@ -1,0 +1,13 @@
+---
+import Buzzer from './Buzzer.astro';
+
+const { question } = Astro.props;
+---
+<div class="flex flex-col items-center">
+	<p class="mb-10 text-2xl font-bold">
+		{ question }
+	</p>
+	<Buzzer class="">
+</div>
+<style>
+</style>
