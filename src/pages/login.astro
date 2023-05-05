@@ -1,16 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="flex justify-center items-center min-h-screen">
-		<p class="text-4xl font-bold"> Uh Oh - Looks like you're early! This is still under construction! </p>
-	</main>
+  <main class="flex flex-col justify-center items-center min-h-screen gap-8">
+    <p class="text-4xl font-bold">login</p>
+    <input class="text-gray-700 px-2" type="password" placeholder="passwort" />
+    <button type="button" class="bg-violet-600 py-1 rounded-lg px-4">OK</button>
+  </main>
 </Layout>
 
 <style>
-	main {
+  /* main {
 		margin: auto;
 		padding: 1.5rem;
 		max-width: 60ch;
@@ -51,5 +53,5 @@ import Card from '../components/Card.astro';
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 1rem;
 		padding: 0;
-	}
+	} */
 </style>
