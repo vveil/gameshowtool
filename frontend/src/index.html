@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameShowTool</title>
+    <link href="../dist/output.css" rel="stylesheet">
+    <!-- use app.js script -->
+    <script type="module" src="./app.js"></script>
+</head>
+<body>
+    <!-- build simple login form with textbox for email and password -->
+    
+    <div class="wrapper flex justify-center items-center h-screen w-screen">
+        <div id="login" class="flex">
+            <form action="submit" class="flex flex-col gap-4">
+                <input type="text" name="e-mail" id="mail" placeholder="e-mail" />
+                <input type="password" name="password" id="password" placeholder="password" />
+                <button type="submit" class="bg-blue-600 px-4 py-2 text-gray-200 rounded-md">login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
