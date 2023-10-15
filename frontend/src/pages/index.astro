@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AuthComponent from '../components/Login.jsx';
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <AuthComponent client:load />
+    <!-- <QuestionForm /> -->
+  </main>
+</Layout>
+
+<style>
+  main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+</style>

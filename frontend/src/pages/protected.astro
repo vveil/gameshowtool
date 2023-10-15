@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <p>You are logged in!</p>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOM loaded');
+        const token = localStorage.getItem('jwtToken');
+        // Configure Axios request headers
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+
+        // Validate the user
+        axios
+          .post('http://localhost:5050/auth/validate', config)
+          .then((response) => {
+            // Do something if user is valid
+            console.log('User is authenticated');
+          })
+          .catch((error) => {
+            console.error('Error checking authentication status:', error);
+            window.location.href = 'http://localhost:4321'; // Redirect to login or some other page
+          });
+      });
+    </script>
+  </main>
+</Layout>
+
+<style></style>

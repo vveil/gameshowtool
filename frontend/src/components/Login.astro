@@ -1,0 +1,51 @@
+---
+import axios from 'axios';
+
+if (Astro.request.method === 'POST') {
+  try {
+    const data = await Astro.request.formData();
+    const username = data.get('username');
+    const password = data.get('password');
+
+    console.log('username:', username);
+    console.log('password:', password);
+
+    const loginData = {
+      username: username,
+      password: password,
+    };
+
+    axios
+      .post('http://localhost:5050/auth/login', loginData)
+      .then((response) => {
+        if (response.status === 200) {
+          console.log('Login successful');
+          // Astro.redirect('/protected');
+          // You can handle the redirect or other actions here
+        } else {
+          console.error('Login failed with status:', response.status);
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+---
+
+<h1>Register</h1>
+<form method="POST">
+  <label>
+    Username:
+    <input type="text" name="username" required />
+  </label>
+  <label>
+    Password:
+    <input type="password" name="password" required minlength="4" />
+  </label>
+  <button>Submit</button>
+</form>

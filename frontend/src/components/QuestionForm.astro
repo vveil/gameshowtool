@@ -1,0 +1,72 @@
+---
+import axios from 'axios';
+
+// if (Astro.request.method === 'POST') {
+//   console.log('inside post');
+//   const data = Astro.request
+//     .formData()
+//     .then((data) => {
+//       const question = data.get('question');
+//       const answer = data.get('answer');
+//       const option1 = data.get('option1');
+//       const option2 = data.get('option2');
+//       const option3 = data.get('option3');
+
+//       const questionData = {
+//         question,
+//         answer,
+//         option1,
+//         option2,
+//         option3,
+//       };
+
+//       console.log(questionData);
+
+//       axios
+//         .post('http://localhost:5050/admin/question', questionData)
+//         .then((response) => {
+//           console.log('inside axios');
+//           if (response.status === 200) {
+//             console.log('Question added successfully');
+//             return;
+//           } else {
+//             console.error('oh no:', response.status);
+//           }
+//         })
+//         .catch((error) => {
+//           console.error('axios error:', error);
+//         });
+//     })
+//     .catch((error) => {
+//       console.error('form error:', error);
+//     });
+// }
+---
+
+<h1>Frage hinterlegen</h1>
+<form method="POST" class="flex flex-col gap-2">
+  <label class="flex justify-between">
+    Frage:
+    <input class="flex-grow max-w-sm" type="text" name="question" required />
+  </label>
+  <label class="flex justify-between">
+    Richtige Antwort:
+    <input class="flex-grow max-w-sm" type="text" name="answer" required />
+  </label>
+  <label class="flex justify-between">
+    Falsche Antwort 1:
+    <input class="flex-grow max-w-sm" type="text" name="option1" required />
+  </label>
+  <label class="flex justify-between">
+    Falsche Antwort 2:
+    <input class="flex-grow max-w-sm" type="text" name="option2" required />
+  </label>
+  <label class="flex justify-between">
+    Falsche Antwort 3:
+    <input class="flex-grow max-w-sm" type="text" name="option3" required />
+  </label>
+  <button
+    class="appearance-none py-2 px-4 bg-purple-500 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-75"
+    >Submit</button
+  >
+</form>
